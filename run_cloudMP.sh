@@ -6,24 +6,27 @@
 # at the end of the simulation, a complete image of the system state is again stored
 storage_path="/Users/bohrer/sim_data_cloudMP/"
 
-gseed=2101 # this is the seed of the PREVIOUS SIP generation of the FIRST of the used grids, seeds of other grids will be gseed+2, gseed+4, gseed+6, ...
-sseed=4101 # this is the seed of the starting simulation run (used in the collision algorithm) for the FIRST of the planned simulations (which belongs to the FIRST grid, s.a.), seeds of other simulations will be sseed+2, sseed+4, sseed+6,
-Nsim=2 # number of simulations (= number of different seeds)
+gseed=4301 # this is the seed of the PREVIOUS SIP generation of the FIRST of the used grids, seeds of other grids will be gseed+2, gseed+4, gseed+6, ...
+sseed=7301 # this is the seed of the starting simulation run (used in the collision algorithm) for the FIRST of the planned simulations (which belongs to the FIRST grid, s.a.), seeds of other simulations will be sseed+2, sseed+4, sseed+6,
+Nsim=50 # number of simulations (= number of different seeds)
 
 no_cells_x=75 # number of grid cells x (horizontal)
 no_cells_z=75 # number of grid cells z (vertical)
 solute_type="AS"
-no_spcm0=2 # number of super particles first mode
-no_spcm1=3 # number of super particles 2nd mode
+no_spcm0=26 # number of super particles first mode
+no_spcm1=38 # number of super particles 2nd mode
 no_col_per_adv=2 # number of collisions steps per advection step
 
 # stored system state is loaded at t_start
-t_start=300 # simulation start time in s
-t_end=600 # simulation end time in s
+t_start=0 # simulation start time in s
+t_end=7200 # simulation end time in s
 
 kernel_type="Long_Bott" # possible: "Golovin", "Long_Bott", "Hall_Bott"
 kernel_method="Ecol_grid_R" # "Ecol_grid_R" for Long/Hall, "analytic" for Golovin
-sim_type="with_collision" # possible: spin_up, "wo_collision", "with_collision"
+# possible: "spin_up"(no coll., no gravity),
+# "with_collision" (with coll. and gravity),
+# "wo_collision" (no coll., with gravity)
+sim_type="spin_up"
 
 for ((n=0; n < $Nsim; n++))
 do
