@@ -13,4 +13,4 @@ To perform and evaluate a simulation:
 4. If required, evaluate data, using "run_gen_plot_data.sh".
 5. Data can be plotted with the python script "plot_results_MA.py". See comments in there.
 
-In case of any questions, contact the repository admin (Jan Bohrer).
+In case of any questions, please contact the repository admin (Jan Bohrer).
